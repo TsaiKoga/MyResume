@@ -3,12 +3,14 @@
  * @create_date: 2018-10-15
  */
 
-var $commands = $('#resume').find('.command');
+var $commands = $('#resume').find('.command-container .command');
 var commandsStr = [];
+var typeInterval = 100;
 
 $commands.each(function(index) {
     var len = this.innerHTML.length;
     commandsStr.push(this.innerHTML);
+    // console.log(this.innerHTML);
     this.innerHTML = "";
 });
 
@@ -26,18 +28,21 @@ function runCommand(index) {
 function typeCharToDisplayResult(i, index) {
     var se = setInterval(function() {
         i++;
-        $commands[index].innerHTML = commandsStr[index].slice(0, i) + "|";
+        $commands[index].innerHTML = commandsStr[index].slice(0, i) + "▌";
+
+        if (i == commandsStr[index].length) {
+            clearInterval(se);
+            $commands[index].innerHTML = commandsStr[index];
+            $($commands[index]).parent('.command-container').next('.command-output').css('display', 'block');
+            $($commands[index]).parent('.command-container').nextAll('.command-container').eq(0).find('p.command-prefix').css('display', 'inline-block');
+        }
+
         var resume = document.getElementById("resume");
         var screen = document.getElementById("screen");
         screen.scrollTop = screen.scrollHeight - screen.clientHeight;
         console.log(screen.scrollTop);
 
-        if (i == commandsStr[index].length) {
-            clearInterval(se);
-            $commands[index].innerHTML = commandsStr[index];
-            $($commands[index]).next('.direct-output').css('display', 'block');
-        }
-    }, 10);
+    }, typeInterval);
 }
 
 // var firstT = setTimeout(function() {
@@ -53,12 +58,13 @@ function typeCharToDisplayResult(i, index) {
 //     console.log(1);
 // }, 1000);
 function serialRunCMD(index) {
-    setTimeout(function() {
+    var cmdTo = setTimeout(function() {
         runCommand(index);
         if (index < $commands.length - 1) {
             serialRunCMD(index+1);
+            clearTimeout(cmdTo);
         }
-    }, 1000);
+    }, typeInterval * 20);
 }
 
 serialRunCMD(0);
