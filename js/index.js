@@ -28,13 +28,19 @@ function runCommand(index) {
 function typeCharToDisplayResult(i, index) {
     var se = setInterval(function() {
         i++;
-        $commands[index].innerHTML = commandsStr[index].slice(0, i) + "▌";
+        // 隐藏光标
+        if ($($commands[index]).parent('.command-container').find('.cursor').css('display') != 'none') {
+            $($commands[index]).parent('.command-container').find('.cursor').css('display', 'none');
+        }
+        $commands[index].innerHTML = commandsStr[index].slice(0, i) + "▐";
 
         if (i == commandsStr[index].length) {
             clearInterval(se);
             $commands[index].innerHTML = commandsStr[index];
             $($commands[index]).parent('.command-container').next('.command-output').css('display', 'block');
             $($commands[index]).parent('.command-container').nextAll('.command-container').eq(0).find('p.command-prefix').css('display', 'inline-block');
+            // 展示下一行命令的光标
+            $($commands[index]).parent('.command-container').nextAll('.command-container').eq(0).find('p.cursor').css('display', 'inline-block');
         }
 
         var resume = document.getElementById("resume");

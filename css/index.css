@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
+@font-face{
+     font-family: 'anonymice';
+     src:url('../font/Anonymice Powerline.ttf') format('truetype');
+}
 
 * {
     margin: 0;
@@ -9,10 +12,10 @@
     vertical-align: baseline;
     box-sizing: border-box;
     color: inherit;
+    font-family: 'anonymice';
 }
 
 body {
-    /* background-image: linear-gradient(120deg, #4f0088 0%, #000000 100%); */
     height: 100%;
     height: 100vh;
 }
@@ -161,17 +164,47 @@ a.avatar img {
     border-top: 0px;
     margin: 0 auto;
 }
+#resume p {
+    margin-bottom: 0px;
+}
+#resume .command-output p {
+    padding: 4px 0;
+}
 #resume .command-container {
     display: block;
     width: 100%;
 }
 #resume .command-container p {
     display: inline-block;
-    color: lime;
+    /* color: lime; */
+}
+#resume p.cursor {
+    display: none;
 }
 #resume p.command-prefix {
     display: none;
     margin-right: 10px;
+}
+#resume p.command-prefix .adr-sym {
+    background-color: #000;
+    padding: 3px 12px 3px 12px;
+}
+#resume p.command-prefix .adr-arrow {
+    color: #000;
+    background-color: #6495ED;
+    margin-left: -2px;
+    padding: 3px 0;
+}
+#resume p.command-prefix .current-path {
+    background-color: #6495ED;
+    color: #000;
+    padding: 3px 12px 3px 12px;
+    margin-left: -11px;
+    font-weight: bold;
+}
+#resume p.command-prefix .path-arrow {
+    color: #6495ED;
+    padding: 3px 0;
 }
 #resume .command-output {
     display: none;
