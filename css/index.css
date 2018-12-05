@@ -25,7 +25,7 @@ p {
     font-family: "Share Tech Mono", monospace;
     color: #f5f5f5;
     margin: 0 0 20px;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 1.2;
 }
 
@@ -75,6 +75,7 @@ a.avatar img {
 
 #laptop {
     height: 100%;
+    margin-top:20px;
 }
 #laptop-screen {
     border: 2px solid #333;
@@ -91,6 +92,7 @@ a.avatar img {
     z-index: 3;
 
     /* height: 45vw; */
+    min-height: 490px;
     height: 85%;
 }
 #webcam {
@@ -100,8 +102,10 @@ a.avatar img {
     border: 2px solid #333;
     margin: 0 auto;
     margin-bottom: 3%;
+    background-color: #555;
 }
 #screen {
+    border: 3px solid #000;
     background-image: linear-gradient(120deg, #333333 0%, #000000 100%);
     width: 96%;
     width: 63vw;
@@ -110,7 +114,7 @@ a.avatar img {
     transform: translateY(-50%); */
     margin: 0 auto;
     vertical-align: middle;
-    padding: 30px 30px 10px;
+    padding: 30px 20px 10px;
     box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
     z-index: 3;
 
@@ -129,6 +133,18 @@ a.avatar img {
     height: 7%;
     position: relative;
     margin: 0 auto;
+}
+#mac-label {
+    text-align: center;
+    color: #555;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+}
+#mac-label b {
+    color: #555;
+    font-size: 22px;
+    font-weight: bold;
 }
 #laptop-keyboard {
     width: 100%;
@@ -166,9 +182,10 @@ a.avatar img {
 }
 #resume p {
     margin-bottom: 0px;
+    word-break:break-all;
 }
 #resume .command-output p {
-    padding: 4px 0;
+    padding: 5px 0;
 }
 #resume .command-container {
     display: block;
@@ -181,13 +198,16 @@ a.avatar img {
 #resume p.cursor {
     display: none;
 }
+#resume .command-container .command {
+    display: none;
+}
 #resume p.command-prefix {
     display: none;
     margin-right: 10px;
 }
 #resume p.command-prefix .adr-sym {
     background-color: #000;
-    padding: 3px 12px 3px 12px;
+    padding: 3px 12px 3px 8px;
 }
 #resume p.command-prefix .adr-arrow {
     color: #000;
@@ -206,10 +226,93 @@ a.avatar img {
     color: #6495ED;
     padding: 3px 0;
 }
+#resume p.command-prefix .path-arrow.branch {
+    color: #6495ED;
+    background-color: #218868;
+    padding: 3px 0;
+}
+#resume p.command-prefix .current-branch {
+    background-color: #218868;
+    color: #000;
+    padding: 3px 12px 3px 12px;
+    margin-left: -11px;
+    font-weight: bold;
+}
+#resume p.command-prefix .branch-arrow {
+    color: #218868;
+    padding: 3px 0;
+}
+#resume p.command-prefix .path-arrow.uncomit-branch {
+    color: #6495ED;
+    background-color: #f0c674;
+    padding: 3px 0;
+}
+#resume p.command-prefix .uncomit-current-branch {
+    background-color: #f0c674;
+    color: #000;
+    padding: 3px 12px 3px 12px;
+    margin-left: -11px;
+    font-weight: bold;
+}
+#resume p.command-prefix .uncomit-branch-arrow {
+    color: #f0c674;
+    padding: 3px 0;
+}
 #resume .command-output {
     display: none;
     /* margin-bottom: 15px; */
 }
+#resume .command-output p {
+    font-weight: normal;
+}
 #resume .command-container .first-line {
     display: inline-block;
+}
+
+
+@media all and (max-width: 960px) {
+    #laptop-bottom {
+        display: none;
+    }
+    #laptop-screen {
+        border: 2px solid #333;
+        border-radius: 2em;
+        padding: 10px 15px 10px 15px;
+        min-height: 595px;
+    }
+    #screen {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .btn-container {
+        width: 100%;
+        height: 60px;
+        display: -webkit-flex;
+        display:         flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    #homebtn {
+        border: 3px solid #888;
+        margin: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    #mac-label {
+        display: none;
+    }
+    #webcam {
+        width: 5px;
+        height: 5px;
+    }
+    #line {
+        margin: auto;
+        border: 2px solid #555;
+        border-radius: 5px;
+        width: 40px;
+        margin-bottom: 20px;
+    }
 }

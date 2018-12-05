@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" href="./css/index.css">
     <script type="text/javascript" src="./js/jquery.js"></script>
     <title></title>
@@ -10,6 +11,7 @@
     <div id="laptop">
     <div id="laptop-screen">
       <div id="webcam"></div>
+      <div id="line"></div>
       <div id="screen">
         <div id="resume">
 
@@ -26,13 +28,24 @@
               <span>Name</span>: <i>Koga Tsai</i>
             </p>
             <p>
-              <span>BirthDay</span>: <i>1990-08</i>
+              <span>BirthDay</span>: <i>1990</i>
             </p>
             <p>
               <span>Education</span>: <i>Bachelor</i>
             </p>
           </div>
 
+          <div class="command-container">
+            <p class="command-prefix">
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~</span><span class="path-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
+            <p class="command">whereis myself</p>
+          </div>
+          <div class="command-output">
+            <p>/China/GuangdongProvince/GuangZhou</p>
+          </div>
 
           <div class="command-container">
             <p class="command-prefix">
@@ -73,6 +86,7 @@
             <p>★★★★☆ 4 koga developer <b>CSS</b></p>
             <p>★★★☆☆ 3 koga developer <b>Javascript</b></p>
             <p>★★★☆☆ 3 koga developer <b>MySQL</b></p>
+            <p>★★★☆☆ 3 koga developer <b>Redis</b></p>
             <p>★★★☆☆ 3 koga developer <b>Shell</b></p>
           </div>
 
@@ -96,22 +110,33 @@
             <p class="command">cat work.log</p>
           </div>
           <div class="command-output">
-          <div class="experience">
             <p>
-              <i>[2014 ~ 2015]</i> <span>America/CitySpadeInc/FullStackDeveloper</span>
+              <i>[2014 ~ 2015]</i> <span>CitySpadeInc/USA/FullStackDeveloper</span>
               <b>{"Skill":"[\"Ruby On Rails\", \"Coffeescript\", \"sass\", \"Git\", \"MySQL\"]"}</b>
+              <b>Response:</b>
+              Created new pages according to UI design surface;
+              Added spider to crawl the informations from some pages and xmls;
+              In 2018, create the mini-wechat application;
             </p>
 
             <p>
-              <i>[2015 ~ 2016]</i> <span>Canada/ShopperPlus/FullStackDeveloper</span>
+              <i>[2015 ~ 2016]</i> <span>ShopperPlus/CA/FullStackDeveloper</span>
               <b>{"Skill":\"[\"Ruby On Rails\", \"Coffeescript\", \"scss\", \"Git\", \"MySQL\"]}</b>
+              <b>Response:</b>
+              Developed some adminstrator pages,including inventory, dashboard, shippment fuild, products management;
+              And optimizing the algorithm of grouping pickup, which maximizing products pickup number and minimizing products pickup times to warehouse keeper;
             </p>
 
             <p>
-              <i>[2017 ~ Now]</i> <span>China/RegentSoftware/BackendDeveloper</span>
+              <i>[2017 ~ Present]</i> <span>RegentSoft/CN/BackendDeveloper</span>
               <b>{"Skill": [\"PHP\", \"Laravel\", \"Git\", \"Shell\", \"MySQL\", \"Javascript\", \"HTML\", \"CSS\"]}</b>
+              <b>Response:</b>
+              Developed API for IOS, Android and Web application;
+              Optimizing MySQL query to speed up the loading time;
+              Refactoring some smelling codes and database structure;
+              Writing some shells to deploy applications;
+              Construct the test enviroment as same as production enviroment, etc;
             </p>
-          </div>
           </div>
 
           <div class="command-container">
@@ -120,10 +145,61 @@
               <span class="current-path">~/MyResume/Logs</span><span class="path-arrow"></span>
             </p>
             <p class="cursor">▐</p>
+            <p class="command">cd ..</p>
+          </div>
+
+          <div class="command-container">
+            <p class="command-prefix">
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~/MyResume</span><span class="path-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
+            <p class="command">git init .</p>
+          </div>
+          <div class="command-output">
+            <p>Initilize empty Git repository /Users/koga/MyResume/.git/</p>
+          </div>
+
+          <div class="command-container">
+            <p class="command-prefix">
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~/MyResume</span><span class="path-arrow branch"></span>
+              <span class="current-branch"> master ?</span><span class="branch-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
+            <p class="command">git add .</p>
+          </div>
+
+          <div class="command-container">
+            <p class="command-prefix">
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~/MyResume</span><span class="path-arrow uncomit-branch"></span>
+              <span class="uncomit-current-branch"> master ✚</span><span class="uncomit-branch-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
+            <p class="command">git commit -m"Welcome to My Resume!"</p>
+          </div>
+          <div class="command-output">
+            <p>[master 11f31bde] Welcome to My Resume!</p>
+            <p>0 files changed, 8 insertions(+), 0 deletion(-)</p>
+          </div>
+
+          <div class="command-container">
+            <p class="command-prefix">
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~/MyResume</span><span class="path-arrow branch"></span>
+              <span class="current-branch"> master</span><span class="branch-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
           </div>
 
         </div>
       </div>
+
+      <div class="btn-container">
+        <div id="homebtn"></div>
+      </div>
+      <div id="mac-label"><b>MacBook</b> Air</div>
     </div>
 
     <div id="laptop-bottom">

@@ -5,33 +5,26 @@
 
 var $commands = $('#resume').find('.command-container .command');
 var commandsStr = [];
+var commandsLen = [1];
 var typeInterval = 100;
 
 $commands.each(function(index) {
     var len = this.innerHTML.length;
     commandsStr.push(this.innerHTML);
-    // console.log(this.innerHTML);
+    commandsLen.push(len);
     this.innerHTML = "";
 });
 
 
-function runCommand(index) {
+function typeCharToDisplayResult(index) {
     var i = 0;
-    var cmdT = setTimeout(function() {
-        typeCharToDisplayResult(i, index);
-    },0);
-    if (i > commandsStr[index].length) {
-        clearTimeout(cmdT);
-    }
-}
-
-function typeCharToDisplayResult(i, index) {
     var se = setInterval(function() {
         i++;
         // 隐藏光标
         if ($($commands[index]).parent('.command-container').find('.cursor').css('display') != 'none') {
             $($commands[index]).parent('.command-container').find('.cursor').css('display', 'none');
         }
+        $($commands[index]).parent('.command-container').find('.command').css('display', 'inline-block');
         $commands[index].innerHTML = commandsStr[index].slice(0, i) + "▐";
 
         if (i == commandsStr[index].length) {
@@ -46,7 +39,7 @@ function typeCharToDisplayResult(i, index) {
         var resume = document.getElementById("resume");
         var screen = document.getElementById("screen");
         screen.scrollTop = screen.scrollHeight - screen.clientHeight;
-        console.log(screen.scrollTop);
+        console.log(screen.scrollHeight, screen.clientHeight, screen.scrollTop);
 
     }, typeInterval);
 }
@@ -65,12 +58,12 @@ function typeCharToDisplayResult(i, index) {
 // }, 1000);
 function serialRunCMD(index) {
     var cmdTo = setTimeout(function() {
-        runCommand(index);
+        typeCharToDisplayResult(index);
         if (index < $commands.length - 1) {
             serialRunCMD(index+1);
             clearTimeout(cmdTo);
         }
-    }, typeInterval * 20);
+    }, commandsLen[index] * 150);
 }
 
 serialRunCMD(0);
