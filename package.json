@@ -1,0 +1,35 @@
+{
+  "name": "myresume",
+  "version": "1.0.0",
+  "description": "My Web Resume.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.production.config.js --mode=production",
+    "dev": "webpack-dev-server --open --mode=development",
+    "watch": "webpack --progress --watch"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "TsaiKoga",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^3.0.1",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "jquery": "^3.3.1"
+  }
+}

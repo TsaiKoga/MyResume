@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css">
-    <script type="text/javascript" src="./js/jquery.js"></script>
     <title></title>
   </head>
   <body>
@@ -62,7 +60,7 @@
               <span class="current-path">~/MyResume</span><span class="path-arrow"></span>
             </p>
             <p class="cursor">▐</p>
-            <p class="command">cd Skill</p>
+            <p class="command">cd Skills</p>
           </div>
           <div class="command-output">
           </div>
@@ -70,7 +68,7 @@
           <div class="command-container">
             <p class="command-prefix">
               <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
-              <span class="current-path">~/MyResume/Skill</span><span class="path-arrow"></span>
+              <span class="current-path">~/MyResume/Skills</span><span class="path-arrow"></span>
             </p>
             <p class="cursor">▐</p>
             <p class="command">ls -l</p>
@@ -91,11 +89,33 @@
           </div>
 
 
+          <div class="command-container">
+            <p class="command-prefix" >
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~/MyResume/Skills</span><span class="path-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
+            <p class="command">cd ../Hobbies </p>
+          </div>
+          <div class="command-container">
+            <p class="command-prefix" >
+              <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
+              <span class="current-path">~/MyResume/Hobbies</span><span class="path-arrow"></span>
+            </p>
+            <p class="cursor">▐</p>
+            <p class="command">ls </p>
+          </div>
+          <div class="command-output">
+            <p>
+              <b>Drawing/</b> <b>Gym/</b> <b>Movies/</b> <b>Musics</b>
+            </p>
+          </div>
+
 
           <div class="command-container">
             <p class="command-prefix" >
               <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
-              <span class="current-path">~/MyResume/Skill</span><span class="path-arrow"></span>
+              <span class="current-path">~/MyResume/Hobbies</span><span class="path-arrow"></span>
             </p>
             <p class="cursor">▐</p>
             <p class="command">cd ../Logs </p>
@@ -113,15 +133,17 @@
             <p>
               <i>[2014 ~ 2015]</i> <span>CitySpadeInc/USA/FullStackDeveloper</span>
               <b>{"Skill":"[\"Ruby On Rails\", \"Coffeescript\", \"sass\", \"Git\", \"MySQL\"]"}</b>
+              <br/>
               <b>Response:</b>
               Created new pages according to UI design surface;
               Added spider to crawl the informations from some pages and xmls;
-              In 2018, create the mini-wechat application;
+              In 2018, create the Cityspade litte program on wechat;
             </p>
 
             <p>
               <i>[2015 ~ 2016]</i> <span>ShopperPlus/CA/FullStackDeveloper</span>
               <b>{"Skill":\"[\"Ruby On Rails\", \"Coffeescript\", \"scss\", \"Git\", \"MySQL\"]}</b>
+              <br/>
               <b>Response:</b>
               Developed some adminstrator pages,including inventory, dashboard, shippment fuild, products management;
               And optimizing the algorithm of grouping pickup, which maximizing products pickup number and minimizing products pickup times to warehouse keeper;
@@ -130,6 +152,7 @@
             <p>
               <i>[2017 ~ Present]</i> <span>RegentSoft/CN/BackendDeveloper</span>
               <b>{"Skill": [\"PHP\", \"Laravel\", \"Git\", \"Shell\", \"MySQL\", \"Javascript\", \"HTML\", \"CSS\"]}</b>
+              <br/>
               <b>Response:</b>
               Developed API for IOS, Android and Web application;
               Optimizing MySQL query to speed up the loading time;
@@ -173,8 +196,8 @@
           <div class="command-container">
             <p class="command-prefix">
               <span class="adr-sym"> koga@Kogas-MacBook-Air</span><span class="adr-arrow"></span>
-              <span class="current-path">~/MyResume</span><span class="path-arrow uncomit-branch"></span>
-              <span class="uncomit-current-branch"> master ✚</span><span class="uncomit-branch-arrow"></span>
+              <span class="current-path">~/MyResume</span><span class="path-arrow uncommit-branch"></span>
+              <span class="uncommit-current-branch"> master ✚</span><span class="uncommit-branch-arrow"></span>
             </p>
             <p class="cursor">▐</p>
             <p class="command">git commit -m"Welcome to My Resume!"</p>
@@ -213,10 +236,10 @@
     </div>
 
 
-
-
-    <script type="text/javascript" src="./js/index.js"></script>
-
+    <script src="./dist/bundle.js"></script>
+    <a href="https://github.com/tsaikoga/MyResume">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
 
   </body>
 </html>

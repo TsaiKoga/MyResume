@@ -163,7 +163,6 @@ a.avatar img {
     border-top: 0px;
     height: 80%;
     height: 2vw;
-    background:
     box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
     z-index: 4;
     position: relative;
@@ -242,19 +241,19 @@ a.avatar img {
     color: #218868;
     padding: 3px 0;
 }
-#resume p.command-prefix .path-arrow.uncomit-branch {
+#resume p.command-prefix .path-arrow.uncommit-branch {
     color: #6495ED;
     background-color: #f0c674;
     padding: 3px 0;
 }
-#resume p.command-prefix .uncomit-current-branch {
+#resume p.command-prefix .uncommit-current-branch {
     background-color: #f0c674;
     color: #000;
     padding: 3px 12px 3px 12px;
     margin-left: -11px;
     font-weight: bold;
 }
-#resume p.command-prefix .uncomit-branch-arrow {
+#resume p.command-prefix .uncommit-branch-arrow {
     color: #f0c674;
     padding: 3px 0;
 }
