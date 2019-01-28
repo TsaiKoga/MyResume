@@ -1,0 +1,294 @@
+// Variables 变量
+$gold: #f0c674
+$black: #000000
+$dark: #333333
+$gray: #555555
+$light-gray: #888888
+$white-smoke: #f5f5f5
+$white: #ffffff
+$sea: #8abeb7
+$directory-blue: #81a2be
+$corn-flower: #6495ED
+$pine: #218868
+
+$tech-mono-font: "Share Tech Mono", monospace
+
+
+// Extend 继承模板
+%laptop-box-shadow-shared
+  box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5)
+%powerline-corn-flower-bg-black-font
+  background-color: $corn-flower
+  color: $black
+
+
+
+// Mixin 函数
+=dark-solid-border($size)
+  border: $size solid $dark
+=background-and-font-color($bg-color, $font-color)
+  color: $font-color
+  background-color: $bg-color
+
+
+
+
+@font-face
+   font-family: 'anonymice'
+   src: url('../font/Anonymice Powerline.ttf') format('truetype')
+
+*
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+  box-sizing: border-box
+  color: inherit
+  font-family: 'anonymice'
+
+body
+  height: 100%
+  height: 100vh
+
+p
+  font-family: $tech-mono-font
+  color: $white-smoke
+  margin: 0 0 20px
+  font-size: 14px
+  line-height: 1.2
+
+span
+  color: $gold
+
+i
+  color: $sea
+
+div a
+  text-decoration: none
+
+b
+  color: $directory-blue
+
+
+
+
+#laptop
+  height: 100%
+  margin-top: 20px
+
+#laptop-screen
+  @extend %laptop-box-shadow-shared
+  +dark-solid-border(2px)
+  border-bottom: 0
+  border-radius: 2em 2em 0 0
+  /* background: rgba(0, 0, 0, 0) */
+  width: 70%
+  /* width: 70vw */
+  position: relative
+  /* top: 50% */
+  margin: 0 auto
+  padding: 30px 30px 10px
+  z-index: 3
+  /* height: 45vw */
+  min-height: 490px
+  height: 85%
+
+#webcam
+  width: 13px
+  height: 13px
+  border-radius: 50%
+  +dark-solid-border(2px)
+  margin: 0 auto
+  margin-bottom: 3%
+  background-color: $gray
+
+#screen
+  @extend %laptop-box-shadow-shared
+  border: 3px solid $black
+  background-image: linear-gradient(120deg, $dark 0%, $black 100%)
+  width: 96%
+  width: 63vw
+  position: relative
+  /* top: 50%*/
+  /*transform: translateY(-50%) */
+  margin: 0 auto
+  vertical-align: middle
+  padding: 30px 20px 10px
+  z-index: 3
+  height: 85%
+  /* height: 35vw */
+  overflow-y: scroll
+
+#resume
+  height: 100%
+  min-height: 100%
+
+#laptop-bottom
+  border: 0px
+  width: 85%
+  width: 85vw
+  height: 7%
+  position: relative
+  margin: 0 auto
+
+#mac-label
+  text-align: center
+  color: $gray
+  height: 50px
+  font-size: 22px
+  line-height: 50px
+  b
+    color: $gray
+    font-size: 22px
+    font-weight: bold
+
+#laptop-keyboard
+  @extend %laptop-box-shadow-shared
+  +dark-solid-border(2px)
+  width: 100%
+  border-bottom: 1px solid $dark
+  border-radius: 5px 5px 0 0
+  height: 42%
+  height: 2vw
+  z-index: 4
+  position: relative
+
+#laptop-base
+  @extend %laptop-box-shadow-shared
+  +dark-solid-border(2px)
+  width: 100%
+  border-top: 0px
+  height: 80%
+  height: 2vw
+  z-index: 4
+  position: relative
+  border-radius: 0 0 10em 10em
+
+#laptop-touchpad
+  width: 25%
+  height: 80%
+  height: 1vw
+  z-index: 5
+  position: relative
+  border-radius: 0 0 10px 10px
+  +dark-solid-border(1px)
+  border-top: 0px
+  margin: 0 auto
+
+#resume
+  p
+    margin-bottom: 0px
+    word-break: break-all
+
+  p.cursor
+    display: none
+
+  p.command-prefix
+    display: none
+    margin-right: 10px
+    .adr-sym
+      background-color: $black
+      padding: 3px 12px 3px 8px
+    .current-path
+      +background-and-font-color($corn-flower, $black)
+      padding: 3px 12px 3px 12px
+      margin-left: -11px
+      font-weight: bold
+    .adr-arrow
+      +background-and-font-color($corn-flower, $black)
+      margin-left: -2px
+      padding: 3px 0
+    .path-arrow
+      color: $corn-flower
+      padding: 3px 0
+    .path-arrow.branch
+      +background-and-font-color($pine, $corn-flower)
+      padding: 3px 0
+    .current-branch
+      +background-and-font-color($pine, $black)
+      padding: 3px 12px 3px 12px
+      margin-left: -11px
+      font-weight: bold
+    .branch-arrow
+      color: $pine
+      padding: 3px 0
+    .path-arrow.uncommit-branch
+      +background-and-font-color($gold, $corn-flower)
+      padding: 3px 0
+    .uncommit-current-branch
+      +background-and-font-color($gold, $black)
+      padding: 3px 12px 3px 12px
+      margin-left: -11px
+      font-weight: bold
+    .uncommit-branch-arrow
+      color: $gold
+      padding: 3px 0
+
+  .command-output
+    display: none
+    p
+      padding: 5px 0
+      font-weight: normal
+
+  .command-container
+    display: block
+    width: 100%
+    .first-line
+      display: inline-block
+    .command
+      display: none
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 960px)
+  #laptop-bottom
+    display: none
+
+  #laptop-screen
+    +dark-solid-border(2px)
+    border-radius: 2em
+    padding: 10px 15px 10px 15px
+    min-height: 595px
+
+  #screen
+    width: 100%
+    border-radius: 5px
+
+  .btn-container
+    width: 100%
+    height: 60px
+    display: -webkit-flex
+    display:         flex
+    -webkit-align-items: center
+    align-items: center
+    -webkit-justify-content: center
+    justify-content: center
+
+  #homebtn
+    border: 3px solid $light-gray
+    margin: auto
+    width: 40px
+    height: 40px
+    border-radius: 50%
+
+  #mac-label
+    display: none
+
+  #webcam
+    width: 5px
+    height: 5px
+
+  #line
+    margin: auto
+    border: 2px solid $gray
+    border-radius: 5px
+    width: 40px
+    margin-bottom: 20px

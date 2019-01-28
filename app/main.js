@@ -4,7 +4,7 @@
  */
 
 import Promise from 'bluebird'
-import './css/index.css'
+import './css/index.sass'
 import $ from 'jquery'
 
 const typeInterval = 100    // Time interval for each letter input 每次输入字母时间间隔
