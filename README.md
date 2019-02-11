@@ -1,6 +1,6 @@
 ## My Resume
 
-[View Resume](https://tsaikoga.io/MyResume)
+[View Resume](https://tsaikoga.github.io/MyResume)
 
 ### About Me
 
